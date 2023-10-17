@@ -33,7 +33,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 max-w-screen-2xl mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -128,7 +128,7 @@ const Navbar = () => {
             </div>
           </>
         ) : (
-         <Link to={'/login'}> <button className="btn btn-sm hover:bg-black hover:text-white font-bold">LogIn</button></Link>
+         <><Link to={'/login'}> <button className="btn btn-sm hover:bg-black hover:text-white font-bold">LogIn</button></Link></>
         )}
       </div>
     </div>

@@ -7,7 +7,7 @@ const Brands = ({loadedBrand}) => {
     
 
   return (
-    <div>
+    <div className="max-w-screen-2xl mx-auto">
       <h1 className="text-center text-5xl font-semibold my-5">
         Our Partner Brands
       </h1>
