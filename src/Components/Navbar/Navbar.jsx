@@ -7,13 +7,13 @@ const Navbar = () => {
       <li>
         <NavLink to={"/"}>Home</NavLink>
       </li>
-      <li tabIndex={0}>
+      <li >
         <details>
           <summary>Categories</summary>
-          <ul className="p-2 text-base">
+          <ul className="p-2 text-base lg:flex w-[640px]">
             <li><Link>Mobile</Link></li>
             <li><Link>Laptop</Link></li>
-            <li><Link>HeadPhones</Link></li>
+            <li><Link>HeadPhone</Link></li>
             <li><Link>SmartWatch</Link></li>
             <li><Link>Gaming Console</Link></li>
             <li><Link>TVs</Link></li>
@@ -28,7 +28,7 @@ const Navbar = () => {
         <NavLink to={"/aboutus"}>About Us</NavLink>
       </li>
       <li>
-        <NavLink to={"/contactus"}>Contact Us</NavLink>
+        <NavLink to={"/contact"}>Contact</NavLink>
       </li>
     </>
   );
@@ -62,7 +62,7 @@ const Navbar = () => {
         <Link to={'/'}> <img className="w-28" src={logo}/></Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 font-semibold text-lg space-x-3">{navlinks}</ul>
+        <ul className="menu menu-horizontal px-1 font-semibold text-lg relative space-x-3">{navlinks}</ul>
       </div>
       <div className="navbar-end">
         {user ? (

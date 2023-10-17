@@ -2,7 +2,7 @@ import '../Banner/Banner.css'
 const Banner = () => {
   return (
     <div className='my-10 mx-3'>
-        <h1 className='text-center text-5xl my-5'>Featured Products</h1>
+        <h1 className='text-center text-5xl font-semibold my-5'>Featured Products</h1>
       <div className="carousel rounded-xl w-full">
         <div
           id="slide1"
