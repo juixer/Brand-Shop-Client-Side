@@ -46,6 +46,7 @@ const AddProducts = () => {
           <input
             type="name"
             name="name"
+            required
             placeholder="Type Product Name Here"
             className="input input-bordered w-full"
           />
@@ -57,6 +58,7 @@ const AddProducts = () => {
           <input
             type="text"
             name="photo"
+            required
             placeholder="Type Product PhotoURL Here"
             className="input input-bordered w-full"
           />
@@ -65,7 +67,7 @@ const AddProducts = () => {
 
         <div className="mb-5">
           <h1 className="text-lg font-semibold ml-2">Product Brand</h1>
-          <select className="select select-bordered w-full" name="brand">
+          <select className="select select-bordered w-full" name="brand" required>
             <option value="">Select Product Brand Here</option>
             <option value="Apple">Apple</option>
             <option value="Samsung">Samsung</option>
@@ -79,7 +81,7 @@ const AddProducts = () => {
 
         <div className="mb-5">
           <h1 className="text-lg font-semibold ml-2">Product Type</h1>
-          <select className="select select-bordered w-full" name="type">
+          <select className="select select-bordered w-full" name="type" required>
             <option value="">Select Product Type Here</option>
             <option value="Mobile">Mobile</option>
             <option value="Laptop">Laptop</option>
@@ -95,6 +97,7 @@ const AddProducts = () => {
           <h1 className="text-lg font-semibold ml-2">Product Price</h1>
           <input
             type="number"
+            required
             name="price"
             placeholder="Type Product Price Here"
             className="input input-bordered w-full"
@@ -107,7 +110,7 @@ const AddProducts = () => {
           <textarea
             className="textarea textarea-bordered w-full h-44"
             placeholder="Type Product Details Here"
-            name="details"
+            name="details" required
           ></textarea>
         </div>
 
@@ -178,7 +181,7 @@ const AddProducts = () => {
         <button className="btn btn-active w-full hover:bg-black hover:text-white">
           Add Product
         </button>
-        
+
       </form>
     </div>
   );

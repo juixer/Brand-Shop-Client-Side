@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Brand from "./Brand";
 
-const Brands = () => {
-    const [brands, setBrands] = useState([])
+const Brands = ({loadedBrand}) => {
+    const [brands, setBrands] = useState(loadedBrand)
 
-    useEffect(() => {
-        fetch('Brand.json')
-        .then(res => res.json())
-        .then(data => setBrands(data))
-    },[])
+    
 
   return (
     <div>
@@ -20,7 +16,7 @@ const Brands = () => {
         {
             brands.map(brand => {
                 return(
-                    <Brand key={brand.id} brand={brand}/>
+                    <Brand key={brand._id} brand={brand}/>
                 )
             })
         }
