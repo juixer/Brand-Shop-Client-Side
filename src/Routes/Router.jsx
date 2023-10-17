@@ -28,7 +28,7 @@ import AddBrand from "../Pages/AddBrand";
         {
             path:'/products/:id',
             element:<BrandProduct/>,
-            loader: async ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+            loader:  ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
         }
       ]
     },

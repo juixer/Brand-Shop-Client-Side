@@ -4,7 +4,6 @@ const Brand = ({ brand }) => {
   const { name, logo } = brand;
 
   const handleBrand = (name) => {
-    console.log(name);
     fetch(`http://localhost:5000/products/${name}`, {
       method: "GET",
     })
