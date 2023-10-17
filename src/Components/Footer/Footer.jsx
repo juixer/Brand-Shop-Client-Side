@@ -12,6 +12,15 @@ const Footer = () => {
         <a className="link link-hover">TV</a>
       </nav>
       <nav>
+        <header className="footer-title">Brands</header>
+        <a className="link link-hover">Apple</a>
+        <a className="link link-hover">Google Pixel</a>
+        <a className="link link-hover">Samsung</a>
+        <a className="link link-hover">Sony</a>
+        <a className="link link-hover">Xiaomi</a>
+        <a className="link link-hover">Microsoft</a>
+      </nav>
+      <nav>
         <header className="footer-title">Company</header>
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>
