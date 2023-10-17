@@ -1,11 +1,25 @@
 import { Link, NavLink } from "react-router-dom";
-
+import logo from '../../assets/Logo.png'
 const Navbar = () => {
   const user = null;
   const navlinks = (
     <>
       <li>
         <NavLink to={"/"}>Home</NavLink>
+      </li>
+      <li tabIndex={0}>
+        <details>
+          <summary>Categories</summary>
+          <ul className="p-2 text-base">
+            <li><Link>Mobile</Link></li>
+            <li><Link>Laptop</Link></li>
+            <li><Link>HeadPhones</Link></li>
+            <li><Link>SmartWatch</Link></li>
+            <li><Link>Gaming Console</Link></li>
+            <li><Link>TVs</Link></li>
+            
+          </ul>
+        </details>
       </li>
       <li>
         <NavLink to={"/addproduct"}>Add Product</NavLink>
@@ -45,10 +59,10 @@ const Navbar = () => {
             {navlinks}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <Link to={'/'}> <img className="w-28" src={logo}/></Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navlinks}</ul>
+        <ul className="menu menu-horizontal px-1 font-semibold text-lg space-x-3">{navlinks}</ul>
       </div>
       <div className="navbar-end">
         {user ? (
@@ -114,7 +128,7 @@ const Navbar = () => {
             </div>
           </>
         ) : (
-         <Link to={'/login'}> <button className="btn btn-sm">LogIn</button></Link>
+         <Link to={'/login'}> <button className="btn btn-sm hover:bg-black hover:text-white font-bold">LogIn</button></Link>
         )}
       </div>
     </div>

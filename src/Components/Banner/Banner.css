@@ -1,0 +1,72 @@
+#slide1{
+    background-image: url('https://i.ibb.co/jGH5hCC/brandon-lee-j-T5m-SPEte-Vc-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -150px ;
+}
+#slide2{
+    background-image: url('https://i.ibb.co/xjbx9m8/louis-philippe-poitras-WMMh6-Btm-TMo-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -150px ;
+}
+#slide3{
+    background-image: url('https://i.ibb.co/smFv2zg/aidan-hancock-Xd7-Sy-Zc-H1s-A-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -350px ;
+}
+#slide4{
+    background-image: url('https://i.ibb.co/k5ZzgGN/samer-khodeir-V2ow-NGx837-Q-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -150px ;
+}
+#slide5{
+    background-image: url('https://i.ibb.co/zJPrcNb/akhil-yerabati-Q2u-V5-Tkj-Nz8-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -150px ;
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px){
+    #slide1{
+        background-position-y: 0;
+        background-position-x: -250px;
+    }
+    #slide2{
+        background-position-y: 0;
+        background-position-x: -150px;
+    }
+    #slide3{
+        background-position-y: 0;
+        background-position-x: -150px;
+    }
+    #slide4{
+        background-position-y: 0;
+        background-position-x: -200px;
+    }
+    #slide5{
+        background-position-y: 0;
+        background-position-x: -345px;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px){
+    #slide1{
+        background-position-y: 0;
+    }
+    #slide2{
+        background-position-y: 0;
+    }
+    #slide3{
+        background-position-y: 0;
+    }
+    #slide4{
+        background-position-y: 0;
+    }
+    #slide5{
+        background-position-y: 0;
+        background-position-x: -150px;
+    }
+}
