@@ -26,7 +26,7 @@ const Register = () => {
     const photo = e.target.photo.value;
     const checkbox = e.target.checkbox.checked;
 
-    const user = { name, email, photo };
+    const user = { name, email, photo};
 
     if (password !== confirmPassword) {
       return Swal.fire({
@@ -58,11 +58,6 @@ const Register = () => {
       .then(() => {
         updateUser(name, photo)
         .then(() => {
-            Swal.fire({
-                icon: "success",
-                title: "Registration Completed",
-                timer: 1500,
-              });
               navigate('/')
         })
         .catch((err) => {
@@ -72,7 +67,21 @@ const Register = () => {
                 timer: 5000,
               });
         })
-        
+        fetch('http://localhost:5000/users',{
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.insertedId) {
+                Swal.fire({
+                  icon: "success",
+                  title: "Registration completed ",
+                  timer: 1500,
+                });
+              }
+        })
       })
       .catch((err) => {
         Swal.fire({

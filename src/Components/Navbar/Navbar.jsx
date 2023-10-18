@@ -61,7 +61,7 @@ const Navbar = () => {
       .then(() => {
         Swal.fire({
           icon: "success",
-          title: "Login Successfully",
+          title: "Logout Successfully",
           timer: 1500,
         });
       })
