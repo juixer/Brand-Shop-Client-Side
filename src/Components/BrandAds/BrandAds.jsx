@@ -1,7 +1,7 @@
 const BrandAds = ({ ad }) => {
   const { ad1, ad2, ad3 } = ad;
   return (
-    <div className="carousel w-full my-16 rounded-xl">
+    <div className="carousel w-full my-10 rounded-xl">
       <div id="slide1" className="carousel-item relative w-full">
         <img
           src={ad1}
