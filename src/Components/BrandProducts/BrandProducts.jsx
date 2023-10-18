@@ -1,8 +1,9 @@
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const BrandProducts = ({ product }) => {
-  const { name, photo, brand, type, price, rating } = product;
+  const {_id, name, photo, brand, type, price, rating } = product;
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl">
       <figure>
@@ -30,7 +31,7 @@ const BrandProducts = ({ product }) => {
           }
         />
         <div className="card-actions justify-start">
-          <button className="btn btn-sm hover:bg-black hover:text-white">Details</button>
+         <Link to={`/product/${_id}`}> <button className="btn btn-sm hover:bg-black hover:text-white">Details</button></Link>
           <button className="btn btn-sm hover:bg-black hover:text-white">Update</button>
         </div>
       </div>
