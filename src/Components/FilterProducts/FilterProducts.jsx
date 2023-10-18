@@ -2,8 +2,8 @@ import { FaRegStar, FaStar } from "react-icons/fa6";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
-const TopRatedProduct = ({ top }) => {
-  const { _id, name, photo, brand, type, price, rating } = top;
+const FilterProducts = ({top}) => {
+    const { _id, name, photo, brand, type, price, rating } = top;
   return (
     <div>
       <div className="card lg:card-side bg-base-100  shadow-2xl">
@@ -56,4 +56,4 @@ const TopRatedProduct = ({ top }) => {
   );
 };
 
-export default TopRatedProduct;
+export default FilterProducts;

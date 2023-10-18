@@ -3,7 +3,8 @@ import Banner from "../Components/Banner/Banner";
 import Brands from "../Components/Brands/Brands";
 import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
-import TopRatedProduct from "../Components/TopRatedProduct/TopRatedProduct";
+import FilterProducts from "../Components/FilterProducts/FilterProducts";
+import Categories from "../Components/Categories/Categories";
 
 const Home = () => {
   const loadedBrand = useLoaderData();
@@ -34,7 +35,7 @@ const Home = () => {
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {topRated.slice(0, 6).map((top) => {
-                return <TopRatedProduct key={top._id} top={top} />;
+                return <FilterProducts key={top._id} top={top} />;
               })}
             </div>
           </>
@@ -42,7 +43,7 @@ const Home = () => {
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
               {topRated.map((top) => {
-                return <TopRatedProduct key={top._id} top={top} />;
+                return <FilterProducts key={top._id} top={top} />;
               })}
             </div>
           </>
@@ -52,6 +53,9 @@ const Home = () => {
             {showMore ? <span>Show More</span> : <span>Show Less</span>}
           </button>
         </div>
+      </div>
+      <div>
+        <Categories/>
       </div>
     </div>
   );

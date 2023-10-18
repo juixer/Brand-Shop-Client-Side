@@ -16,7 +16,7 @@ const Banner = () => {
               <span className="">Limited Time Offers: </span>Our gaming console sales wont last forever.
               Act fast to seize these incredible savings before theyre gone!
             </p>
-            <button className="btn hover:bg-black hover:text-white border-none">Learn More</button>
+            <button className="btn hover:bg-black hover:text-white border-none">Discover More</button>
           </div>
         </div>
       </div>
