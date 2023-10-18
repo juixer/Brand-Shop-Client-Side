@@ -20,11 +20,11 @@ const BrandProduct = () => {
                     <BrandAds key={ad._id} ad={ad}/>
                 )
             })}
-            {loadedBrandProduct.length > 0 ? <>{loadedBrandProduct.map(product => {
+            {loadedBrandProduct.length > 0 ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">{loadedBrandProduct.map(product => {
                 return(
                     <BrandProducts key={product._id} product={product} />
                 )
-            })}</> : <><p>no data</p></>}
+            })}</div> : <><p>no data</p></>}
         </div>
     );
 };
