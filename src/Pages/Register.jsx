@@ -1,15 +1,20 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../Hook/useAuth";
 
 const Register = () => {
+  //auth provider
+  const { createUser, updateUser } = useAuth();
   // show password
   const [showPassword, setShowPassword] = useState(true);
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
+  //   navigate
+  const navigate = useNavigate();
 
   //register by email and password
   const handleRegister = (e) => {
@@ -21,37 +26,67 @@ const Register = () => {
     const photo = e.target.photo.value;
     const checkbox = e.target.checkbox.checked;
 
-    const user = {name, email, photo}
+    const user = { name, email, photo };
 
     if (password !== confirmPassword) {
-        return Swal.fire({
-            icon: "error",
-            title: `Password does not matched`,
-            timer: 5000,
-          });
-      } else if (password.length < 6) {
-        return Swal.fire({
-            icon: "error",
-            title: `Password should be at least 6 characters`,
-            timer: 5000,
-          });
-      } else if (!/^(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%^&+=!])/.test(password)) {
-        return Swal.fire({
-            icon: "error",
-            title: `Password does not match the requirements`,
-            timer: 5000,
-          });
-      } else if (checkbox === false) {
-        return Swal.fire({
-            icon: "error",
-            title: `Please accept our terms and conditions`,
-            timer: 5000,
-          });
-      }
+      return Swal.fire({
+        icon: "error",
+        title: `Password does not matched`,
+        timer: 5000,
+      });
+    } else if (password.length < 6) {
+      return Swal.fire({
+        icon: "error",
+        title: `Password should be at least 6 characters`,
+        timer: 5000,
+      });
+    } else if (!/^(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%^&+=!])/.test(password)) {
+      return Swal.fire({
+        icon: "error",
+        title: `Password does not match the requirements`,
+        timer: 5000,
+      });
+    } else if (checkbox === false) {
+      return Swal.fire({
+        icon: "error",
+        title: `Please accept our terms and conditions`,
+        timer: 5000,
+      });
+    }
+
+    createUser(email, password)
+      .then(() => {
+        updateUser(name, photo)
+        .then(() => {
+            Swal.fire({
+                icon: "success",
+                title: "Registration Completed",
+                timer: 1500,
+              });
+              navigate('/')
+        })
+        .catch((err) => {
+            Swal.fire({
+                icon: "error",
+                title: `${err.message}`,
+                timer: 5000,
+              });
+        })
+        
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: `${err.message}`,
+          timer: 5000,
+        });
+      });
   };
   return (
     <div>
-        <Helmet><title>Register</title></Helmet>
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <form onSubmit={handleRegister} className="card-body max-w-2xl mx-auto">
         <h1 className="text-center text-5xl font-semibold">Register</h1>
         <div className="form-control">
