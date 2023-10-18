@@ -41,7 +41,7 @@ const ProductDetails = () => {
           <p className="text-xl">{rating}</p>
         </div>
         <p className="text-xl font-semibold">Price: <span className="font-normal">{price}BDT</span></p>
-        <p className="max-w-2xl text-xl font-semibold">Description: <span className="font-normal">{details}</span></p>
+        <p className="max-w-3xl text-xl font-semibold">Description: <span className="font-normal">{details}</span></p>
         <div className="card-actions justify-start mt-5">
           <button className="btn btn-sm bg-black text-white hover:bg-white hover:text-black">
             Add To Cart

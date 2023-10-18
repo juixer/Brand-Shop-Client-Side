@@ -28,31 +28,6 @@ const Navbar = () => {
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
-        <details>
-          <summary>Categories</summary>
-          <ul className="p-2 text-base lg:flex w-[640px]">
-            <li>
-              <Link>Mobile</Link>
-            </li>
-            <li>
-              <Link>Laptop</Link>
-            </li>
-            <li>
-              <Link>HeadPhone</Link>
-            </li>
-            <li>
-              <Link>SmartWatch</Link>
-            </li>
-            <li>
-              <Link>Gaming Console</Link>
-            </li>
-            <li>
-              <Link>TVs</Link>
-            </li>
-          </ul>
-        </details>
-      </li>
-      <li>
         <NavLink to={"/addProduct"}>Add Product</NavLink>
       </li>
       <li>

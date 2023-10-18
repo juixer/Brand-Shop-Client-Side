@@ -8,11 +8,11 @@ const Brands = ({loadedBrand}) => {
 
   return (
     <div className="max-w-screen-2xl mx-auto">
-      <h1 className="text-center text-5xl font-semibold my-5">
+      <h1 className="text-center text-5xl font-semibold my-16">
         Our Partner Brands
       </h1>
 
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 mx-3 my-10">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 mx-3 my-10">
         {
             brands.map(brand => {
                 return(

@@ -5,15 +5,6 @@ const Footer = () => {
    <div className="bg-base-300">
      <footer className="footer mx p-10 max-w-screen-2xl mx-auto text-base-content">
       <nav>
-        <header className="footer-title">Categories</header>
-        <a className="link link-hover">Mobile</a>
-        <a className="link link-hover">Laptop</a>
-        <a className="link link-hover">HeadPhone</a>
-        <a className="link link-hover">SmartWatch</a>
-        <a className="link link-hover">Gaming Console</a>
-        <a className="link link-hover">TV</a>
-      </nav>
-      <nav>
         <header className="footer-title">Brands</header>
         <Link to={'/products/Google Pixel'}><p className="link link-hover">Google Pixel</p></Link>
         <Link to={'/products/Samsung'}><p className="link link-hover">Samsung</p></Link>

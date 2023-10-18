@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
   const loadedProductDetails = useLoaderData();
-  const {_id, name, brand, photo, details, type, price } = loadedProductDetails;
+  const {_id, name, brand, photo, details, type, price,rating } = loadedProductDetails;
 
   const handleFormData = (e) => {
     e.preventDefault();
@@ -29,7 +29,7 @@ const UpdateProduct = () => {
         if(data.modifiedCount > 0) {
             Swal.fire({
                 icon: "success",
-                title: "Product Added to Database",
+                title: "Product Updated",
                 timer: 1500,
               });
         }
@@ -105,7 +105,7 @@ const UpdateProduct = () => {
         <div className="mb-5">
           <h1 className="text-lg font-semibold ml-2">Product Price</h1>
           <input
-            type="number"
+            type="text"
             required
             name="price"
             defaultValue={price}
@@ -127,43 +127,19 @@ const UpdateProduct = () => {
 
         <div className="mb-5">
           <h1 className="text-lg font-semibold ml-2">Product Rating</h1>
-
-          <div className="flex gap-2 md:flex-row flex-col md:ml-5">
-            <label className="label cursor-pointer">
-              <span className="label-text mr-2 font-bold text-base">
-                1 Star
-              </span>
-              <input type="radio" name="rating" className="radio" value="1" />
-            </label>
-
-            <label className="label cursor-pointer">
-              <span className="label-text mr-2 font-bold text-base">
-                2 Star
-              </span>
-              <input type="radio" name="rating" className="radio " value="2" />
-            </label>
-
-            <label className="label cursor-pointer">
-              <span className="label-text mr-2 font-bold text-base">
-                3 Star
-              </span>
-              <input type="radio" name="rating" className="radio" value="3" />
-            </label>
-
-            <label className="label cursor-pointer">
-              <span className="label-text mr-2 font-bold text-base">
-                4 Star
-              </span>
-              <input type="radio" name="rating" className="radio " value="4" />
-            </label>
-
-            <label className="label cursor-pointer">
-              <span className="label-text mr-2 font-bold text-base">
-                5 Star
-              </span>
-              <input type="radio" name="rating" className="radio " value="5" />
-            </label>
-          </div>
+          <select
+            className="select select-bordered w-full"
+            name="rating"
+            defaultValue={rating}
+            required
+          >
+            <option value="">Select Product Rating</option>
+            <option value="1">1 Star</option>
+            <option value="2">2 Star</option>
+            <option value="3">3 Star</option>
+            <option value="4">4 Star</option>
+            <option value="5">5 Star</option>
+          </select>
         </div>
 
         <button className="btn btn-active w-full hover:bg-black hover:text-white">
