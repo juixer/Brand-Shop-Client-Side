@@ -33,7 +33,7 @@ const Root = () => {
           <Outlet />
         )}
       </div>
-      <button onClick={handleTop} className="btn bg-black rounded-full text-white hover:text-black fixed bottom-5 right-5"><FaArrowUp/></button>
+      <button onClick={handleTop} className="btn bg-base-300 rounded-full fixed bottom-5 right-5"><FaArrowUp/></button>
       <Footer/>
     </div>
   );
