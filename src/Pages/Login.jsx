@@ -6,17 +6,44 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
+
     // location & navigate
     const location = useLocation();
     const navigate = useNavigate();
+
     // authProvider
-    const {googleLogin} = useAuth();
+    const {googleLogin, userSignIn} = useAuth();
+
     // show password
     const [showPassword, setShowPassword] = useState(true);
-
     const handleShowPassword = () => {
         setShowPassword(!showPassword)
       }
+
+    // Sign in by email and password
+    const handleSignIn = e => {
+        e.preventDefault();
+
+        const email = e.target.email.value
+        const password = e.target.password.value
+        userSignIn(email, password)
+        .then(() => {
+            Swal.fire({
+                icon: "success",
+                title: "Login Successfully",
+                timer: 1500,
+              });
+              navigate(location.state ? location?.state : "/");
+        })
+        .catch((err)=> {
+            Swal.fire({
+                icon: "error",
+                title: `${err.message}`,
+                timer: 5000,
+              });
+        })
+        
+    }
     
     // google login
     const handleGoogleLogin = () => {
@@ -43,7 +70,7 @@ const Login = () => {
       <h1 className="text-center text-5xl font-semibold  my-16">
         Log In
       </h1>
-      <form className="card-body max-w-2xl mx-auto">
+      <form onSubmit={handleSignIn} className="card-body max-w-2xl mx-auto">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
