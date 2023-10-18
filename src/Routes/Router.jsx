@@ -12,6 +12,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import Subscribers from "../Pages/Subscribers";
+import AboutUs from "../Pages/AboutUs";
   const Router = createBrowserRouter([
     {
       path: "/",
@@ -54,6 +55,10 @@ import Subscribers from "../Pages/Subscribers";
           path:'/subscriber',
           element:<Subscribers/>,
           loader:() => fetch('http://localhost:5000/subscribers')
+        },
+        {
+          path:'/about',
+          element: <AboutUs/>
         }
       ]
     },
