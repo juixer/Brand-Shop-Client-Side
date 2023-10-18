@@ -16,7 +16,7 @@ const Brand = ({ brand }) => {
       <Link to={`/products/${name}`}>
         <div
           onClick={() => handleBrand(name)}
-          className="card  bg-base-100 hover:bg-gray-200 border shadow-xl"
+          className="card  bg-base-100 hover:bg-gray-200  shadow-2xl"
         >
           <figure>
             <img src={logo} alt={name} />
