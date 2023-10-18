@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import BrandAds from "../Components/BrandAds/BrandAds";
 import BrandProducts from "../Components/BrandProducts/BrandProducts";
+import { Helmet } from "react-helmet-async";
 
 const BrandProduct = () => {
   const loadedBrandProduct = useLoaderData();
@@ -15,6 +16,7 @@ const BrandProduct = () => {
 
   return (
     <div className="max-w-screen-2xl mx-auto px-3 my-10">
+      <Helmet><title>{id}</title></Helmet>
       {loadedBrandProduct.length > 0 ? (
         <div>
           {brandAd.map((ad) => {

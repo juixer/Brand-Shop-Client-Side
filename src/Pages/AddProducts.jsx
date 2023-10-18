@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
 const AddProducts = () => {
@@ -36,7 +37,7 @@ const AddProducts = () => {
   };
   return (
     <div className="my-10 mx-3">
-
+      <Helmet><title>Add Product</title></Helmet>
       <h1 className="text-center text-5xl font-semibold my-5">Add Product</h1>
 
       <form onSubmit={handleFormData} className="max-w-3xl mx-auto">

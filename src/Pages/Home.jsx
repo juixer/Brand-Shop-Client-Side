@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import FilterProducts from "../Components/FilterProducts/FilterProducts";
 import Categories from "../Components/Categories/Categories";
+import Subscribe from "../Components/Subscribe/Subscribe";
 
 const Home = () => {
   const loadedBrand = useLoaderData();
@@ -56,6 +57,7 @@ const Home = () => {
       </div>
       <div>
         <Categories/>
+        <Subscribe/>
       </div>
     </div>
   );

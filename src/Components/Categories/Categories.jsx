@@ -35,17 +35,11 @@ const Categories = () => {
       .then((data) => setProducts(data));
   }, [category]);
   return (
-    <div className="max-w-screen-2xl mx-auto my-10">
+    <div className="max-w-screen-2xl mx-auto my-10 px-3">
       <h1 className="text-center text-5xl font-semibold">Find Your Category</h1>
 
-      <div className="flex justify-center items-center my-5">
-        <div className="join join-vertical lg:join-horizontal">
-          <button
-            onClick={handleMobile}
-            className="btn hover:bg-black hover:text-white join-item"
-          >
-            Mobile
-          </button>
+      <div className="flex flex-row justify-center items-center my-5">
+        <div className="join join-vertical md:join-horizontal">
           <button
             onClick={handleLaptop}
             className="btn hover:bg-black hover:text-white join-item"
@@ -57,6 +51,12 @@ const Categories = () => {
             className="btn hover:bg-black hover:text-white join-item"
           >
             HeadPhone
+          </button>
+          <button
+            onClick={handleMobile}
+            className="btn hover:bg-black hover:text-white join-item"
+          >
+            Mobile
           </button>
           <button
             onClick={handleSmartWatch}
@@ -82,7 +82,7 @@ const Categories = () => {
         <>
           {showMore ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
-              {products.slice(0,6).map((top) => {
+              {products.slice(0, 6).map((top) => {
                 return <FilterProducts key={top._id} top={top} />;
               })}
             </div>

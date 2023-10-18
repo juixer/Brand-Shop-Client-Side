@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { FaRegStar, FaStar } from "react-icons/fa6";
 import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
@@ -8,6 +9,7 @@ const ProductDetails = () => {
     loadedProductDetails;
   return (
     <div className="card lg:card-side bg-base-100 shadow-2xl my-10 max-w-screen-xl mx-auto px-3">
+      <Helmet><title>{name}</title></Helmet>
       <figure>
         <img className="w-96" src={photo} alt={name} />
       </figure>
