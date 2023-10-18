@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../FireBase/FireBase.config";
 
@@ -9,16 +9,26 @@ const googleProvider = new GoogleAuthProvider()
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+
     // GOOGLE LOGIN
     const googleLogin = () => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
 
+    // SignOut
+    
+    const userSignOut = () => {
+        setLoading(true);
+        return signOut(auth)
+    }
+
     // provider values
     const authInfo = {
         googleLogin,
-        user
+        userSignOut,
+        user,
+        loading
     }
 
     useEffect(() => {

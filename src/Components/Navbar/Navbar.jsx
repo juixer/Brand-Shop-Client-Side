@@ -2,8 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/Logo.png";
 import { useEffect, useState } from "react";
 import useAuth from "../../Hook/useAuth";
+import Swal from "sweetalert2";
+
 const Navbar = () => {
-  const {user} = useAuth();
+
+  const {user, userSignOut} = useAuth();
+
   // dark mode toggle
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "Light"
@@ -39,6 +43,25 @@ const Navbar = () => {
       </li>
     </>
   );
+
+  // handle LogOut
+  const handleLogOut = () => {
+    userSignOut()
+    .then(() => {
+      Swal.fire({
+        icon: "success",
+        title: "Login Successfully",
+        timer: 1500,
+      });
+    })
+    .catch(err => {
+      Swal.fire({
+        icon: "error",
+        title: `${err.message}`,
+        timer: 1500,
+      });
+    })
+  }
   return (
     <div className="navbar bg-base-100 max-w-screen-2xl mx-auto ">
       <div className="navbar-start">
@@ -149,15 +172,11 @@ const Navbar = () => {
                 className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <a className="justify-between">
-                    Profile
-                    <span className="badge">New</span>
-                  </a>
+                  <p className="justify-between font-bold">
+                    {user?.displayName}
+                  </p>
                 </li>
-                <li>
-                  <a>Settings</a>
-                </li>
-                <li>
+                <li onClick={handleLogOut}>
                   <a>Logout</a>
                 </li>
               </ul>

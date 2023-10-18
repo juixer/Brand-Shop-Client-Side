@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from '../Hook/useAuth'
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
+    // location & navigate
+    const location = useLocation();
+    const navigate = useNavigate();
     // authProvider
     const {googleLogin} = useAuth();
     // show password
@@ -23,6 +27,7 @@ const Login = () => {
                 title: "Login Successfully",
                 timer: 1500,
               });
+              navigate(location.state ? location?.state : "/");
         })
         .catch((err)=> {
             Swal.fire({
@@ -34,6 +39,7 @@ const Login = () => {
     }
   return (
     <div className="max-w-screen-2xl mx-auto my-16">
+        <Helmet><title>Log In</title></Helmet>
       <h1 className="text-center text-5xl font-semibold  my-16">
         Log In
       </h1>
@@ -75,7 +81,6 @@ const Login = () => {
         <h1 className="text-center mb-3">
           Or <br></br>LogIn With
         </h1>
-        <hr className="mx-20" />
         <div className="flex justify-center gap-10">
           <button
             onClick={handleGoogleLogin}
@@ -89,7 +94,6 @@ const Login = () => {
             <FaGithub />
           </button>
         </div>
-        <hr className="mx-20" />
         <h1 className="text-center mt-3">
           Do not have an Account?{" "}
           <Link to={"/register"}>

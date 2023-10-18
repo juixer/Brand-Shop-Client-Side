@@ -9,6 +9,7 @@ import ProductDetails from "../Pages/ProductDetails";
 import ErrorPage from "../Pages/ErrorPage";
 import UpdateProduct from "../Pages/UpdateProduct";
 import Login from "../Pages/Login";
+import Register from "../Pages/Register";
   const Router = createBrowserRouter([
     {
       path: "/",
@@ -42,6 +43,10 @@ import Login from "../Pages/Login";
         {
           path:'/login',
           element:<Login/>
+        },
+        {
+          path:'/register',
+          element: <Register/>
         }
       ]
     },
