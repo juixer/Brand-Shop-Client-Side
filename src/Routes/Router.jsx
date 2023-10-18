@@ -10,6 +10,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import UpdateProduct from "../Pages/UpdateProduct";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import PrivateRoute from "./PrivateRoute";
   const Router = createBrowserRouter([
     {
       path: "/",
@@ -23,11 +24,11 @@ import Register from "../Pages/Register";
         },
         {
             path:'/addProduct',
-            element:<AddProducts/>
+            element:<PrivateRoute><AddProducts/></PrivateRoute>
         },
         {
             path:'/products/:id',
-            element:<BrandProduct/>,
+            element:<PrivateRoute><BrandProduct/></PrivateRoute>,
             loader:  ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
         },
         {
@@ -37,7 +38,7 @@ import Register from "../Pages/Register";
         },
         {
           path: 'updateProduct/:id',
-          element: <UpdateProduct/>,
+          element: <PrivateRoute><UpdateProduct/></PrivateRoute>,
           loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
         },
         {

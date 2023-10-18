@@ -105,7 +105,7 @@ const Login = () => {
         </div>
       </form>
       <div className="max-w-2xl mx-auto -mt-5">
-        <h1 className="text-center mb-3">
+        <h1 className="text-center">
           Or <br></br>LogIn With
         </h1>
         <div className="flex justify-center gap-10">
