@@ -7,7 +7,7 @@ const ProductDetails = () => {
   const { brand, details, name, photo, price, rating, type } =
     loadedProductDetails;
   return (
-    <div className="card lg:card-side bg-base-100 shadow-xl my-10 max-w-screen-xl mx-auto px-3">
+    <div className="card lg:card-side bg-base-100 shadow-xl my-10 max-w-screen-xl border mx-auto px-3">
       <figure>
         <img className="w-96" src={photo} alt={name} />
       </figure>

@@ -15,16 +15,16 @@ const BrandProduct = () => {
     
     return (
         <div className="max-w-screen-2xl mx-auto px-3 my-10">
-            {brandAd.map(ad => {
+            {loadedBrandProduct.length > 0 ? <div>{brandAd.map(ad => {
                 return(
                     <BrandAds key={ad._id} ad={ad}/>
                 )
-            })}
+            })}</div> : ''}
             {loadedBrandProduct.length > 0 ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">{loadedBrandProduct.map(product => {
                 return(
                     <BrandProducts key={product._id} product={product} />
                 )
-            })}</div> : <><p>no data</p></>}
+            })}</div> : <div className="lg:my-36"><h1 className="text-6xl max-w-2xl text-center mx-auto">We are working on bringing products from this brand to our collection. Check back soon!</h1></div>}
         </div>
     );
 };
