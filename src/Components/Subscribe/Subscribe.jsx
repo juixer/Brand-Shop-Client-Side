@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 const Subscribe = () => {
