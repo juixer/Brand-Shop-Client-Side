@@ -14,7 +14,7 @@ const BrandProduct = () => {
     },[id])
     
     return (
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-screen-2xl mx-auto px-3 my-10">
             {brandAd.map(ad => {
                 return(
                     <BrandAds key={ad._id} ad={ad}/>

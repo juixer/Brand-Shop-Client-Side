@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
    <div className="bg-base-300">
@@ -13,12 +15,12 @@ const Footer = () => {
       </nav>
       <nav>
         <header className="footer-title">Brands</header>
-        <a className="link link-hover">Apple</a>
-        <a className="link link-hover">Google Pixel</a>
-        <a className="link link-hover">Samsung</a>
-        <a className="link link-hover">Sony</a>
-        <a className="link link-hover">Xiaomi</a>
-        <a className="link link-hover">Microsoft</a>
+        <Link to={'/products/Google Pixel'}><p className="link link-hover">Google Pixel</p></Link>
+        <Link to={'/products/Samsung'}><p className="link link-hover">Samsung</p></Link>
+        <Link to={'/products/Apple'}><p className="link link-hover">Apple</p></Link>
+        <Link to={'/products/Sony'}><p className="link link-hover">Sony</p></Link>
+        <Link to={'/products/Xiaomi'}><p className="link link-hover">Xiaomi</p></Link>
+        <Link to={'/products/Microsoft'}><p className="link link-hover">Microsoft</p></Link>
       </nav>
       <nav>
         <header className="footer-title">Company</header>

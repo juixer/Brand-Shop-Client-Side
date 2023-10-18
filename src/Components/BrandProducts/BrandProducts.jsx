@@ -4,15 +4,19 @@ import { FaRegStar, FaStar } from "react-icons/fa6";
 const BrandProducts = ({ product }) => {
   const { name, photo, brand, type, price, rating } = product;
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
-      <figure className="px-10 pt-10">
-        <img src={photo} alt={name} className="rounded-xl" />
+    <div className="card lg:card-side bg-base-100 shadow-xl">
+      <figure>
+        <img
+        className="w-44"
+          src={photo}
+          alt={name}
+        />
       </figure>
-      <div className="card-body items-center text-center">
+      <div className="card-body">
         <h2 className="card-title">{name}</h2>
         <p>Brand: {brand}</p>
-        <p>Type: {type}</p>
-        <p>Price: {price} BDT</p>
+        <p>type: {type}</p>
+        <p>Price: {price}BDT</p>
         <Rating
           placeholderRating={rating}
           emptySymbol={
@@ -25,7 +29,7 @@ const BrandProducts = ({ product }) => {
             <span className="text-orange-500"><FaStar/></span>
           }
         />
-        <div className="card-actions">
+        <div className="card-actions justify-start">
           <button className="btn btn-sm hover:bg-black hover:text-white">Details</button>
           <button className="btn btn-sm hover:bg-black hover:text-white">Update</button>
         </div>
