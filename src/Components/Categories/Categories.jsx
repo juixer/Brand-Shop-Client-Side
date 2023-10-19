@@ -30,9 +30,7 @@ const Categories = () => {
   };
 
   useEffect(() => {
-    fetch(
-      `https://server-side-bahjtmsmh-juixers-projects.vercel.app/category/${category}`
-    )
+    fetch(`https://server-side-jet.vercel.app/category/${category}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [category]);

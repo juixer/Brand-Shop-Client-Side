@@ -7,15 +7,15 @@ const BrandProducts = ({ product }) => {
   const { _id, name, photo, brand, type, price, rating } = product;
   const { email } = useAuth();
   const handleDetails = (email) => {
-    fetch(
-      `https://server-side-bahjtmsmh-juixers-projects.vercel.app/user/${email}`,
-      {
-        method: "GET",
-      }
-    ).then((res) => res.json());
+    fetch(`https://server-side-jet.vercel.app/user/${email}`, {
+      method: "GET",
+    }).then((res) => res.json());
   };
   return (
-    <div data-aos="flip-left" className="card lg:card-side bg-base-100  shadow-2xl">
+    <div
+      data-aos="flip-left"
+      className="card lg:card-side bg-base-100  shadow-2xl"
+    >
       <figure>
         <img className="lg:w-56" src={photo} alt={name} />
       </figure>

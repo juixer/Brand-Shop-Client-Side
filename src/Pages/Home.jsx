@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import FilterProducts from "../Components/FilterProducts/FilterProducts";
 import Categories from "../Components/Categories/Categories";
 import Subscribe from "../Components/Subscribe/Subscribe";
+import { async } from "@firebase/util";
 
 const Home = () => {
   const loadedBrand = useLoaderData();
@@ -17,9 +18,13 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetch("https://server-side-bahjtmsmh-juixers-projects.vercel.app/topRating")
-      .then((res) => res.json())
-      .then((data) => setTopRated(data));
+
+    const fetchTopProducts = async () => {
+      const res = await fetch("https://server-side-jet.vercel.app/topRating")
+      const data = await res.json();
+      setTopRated(data)
+    }
+    fetchTopProducts();
   }, []);
   return (
     <div>

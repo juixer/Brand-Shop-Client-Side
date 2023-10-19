@@ -8,12 +8,9 @@ const FilterProducts = ({ top }) => {
 
   const { email } = useAuth();
   const handleDetails = (email) => {
-    fetch(
-      `https://server-side-bahjtmsmh-juixers-projects.vercel.app/user/${email}`,
-      {
-        method: "GET",
-      }
-    ).then((res) => res.json());
+    fetch(`https://server-side-jet.vercel.app/user/${email}`, {
+      method: "GET",
+    }).then((res) => res.json());
   };
   return (
     <div data-aos="flip-left">

@@ -18,7 +18,7 @@ const CartItem = ({ item }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://server-side-bahjtmsmh-juixers-projects.vercel.app/user/${user.email}/cart/${_id}`,
+          `https://server-side-jet.vercel.app/user/${user.email}/cart/${_id}`,
           {
             method: "DELETE",
           }
@@ -36,12 +36,9 @@ const CartItem = ({ item }) => {
   };
 
   const handlePurchase = () => {
-    fetch(
-      `https://server-side-bahjtmsmh-juixers-projects.vercel.app/user/${user.email}/cart/${_id}`,
-      {
-        method: "DELETE",
-      }
-    )
+    fetch(`https://server-side-jet.vercel.app/user/${user.email}/cart/${_id}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

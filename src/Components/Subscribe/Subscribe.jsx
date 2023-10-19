@@ -8,14 +8,11 @@ const Subscribe = () => {
     const email = form.email.value;
     const subscribe = { name, email };
 
-    fetch(
-      "https://server-side-bahjtmsmh-juixers-projects.vercel.app/subscribers",
-      {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(subscribe),
-      }
-    )
+    fetch("https://server-side-jet.vercel.app/subscribers", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(subscribe),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
@@ -30,7 +27,10 @@ const Subscribe = () => {
   };
 
   return (
-    <div data-aos="flip-left" className="my-16 max-w-screen-2xl mx-auto bg-indigo-300 bg-opacity-40 p-10 rounded-xl flex flex-col justify-center items-center ">
+    <div
+      data-aos="flip-left"
+      className="my-16 max-w-screen-2xl mx-auto bg-indigo-300 bg-opacity-40 p-10 rounded-xl flex flex-col justify-center items-center "
+    >
       <span className="text-center text-5xl border-black border-b font-semibold mb-5">
         Subscribers
       </span>

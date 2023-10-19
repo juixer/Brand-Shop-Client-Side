@@ -4,12 +4,9 @@ const Brand = ({ brand }) => {
   const { name, logo } = brand;
 
   const handleBrand = (name) => {
-    fetch(
-      `https://server-side-bahjtmsmh-juixers-projects.vercel.app/products/${name}`,
-      {
-        method: "GET",
-      }
-    ).then((res) => res.json());
+    fetch(`https://server-side-jet.vercel.app/products/${name}`, {
+      method: "GET",
+    }).then((res) => res.json());
   };
 
   return (

@@ -67,14 +67,11 @@ const Register = () => {
               timer: 5000,
             });
           });
-        fetch(
-          "https://server-side-bahjtmsmh-juixers-projects.vercel.app/users",
-          {
-            method: "PATCH",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(user),
-          }
-        )
+        fetch("https://server-side-jet.vercel.app/users", {
+          method: "PATCH",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(user),
+        })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

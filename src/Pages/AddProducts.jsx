@@ -16,14 +16,11 @@ const AddProducts = () => {
 
     const productInfo = { name, photo, brand, type, price, details, rating };
 
-    fetch(
-      "https://server-side-bahjtmsmh-juixers-projects.vercel.app/products",
-      {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(productInfo),
-      }
-    )
+    fetch("https://server-side-jet.vercel.app/products", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(productInfo),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {

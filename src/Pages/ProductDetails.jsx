@@ -16,14 +16,11 @@ const ProductDetails = () => {
 
   // handle cart
   const handleAddCart = () => {
-    fetch(
-      `https://server-side-bahjtmsmh-juixers-projects.vercel.app/user/${user.email}`,
-      {
-        method: "PATCH",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(loadedProductDetails),
-      }
-    )
+    fetch(`https://server-side-jet.vercel.app/user/${user.email}`, {
+      method: "PATCH",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(loadedProductDetails),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -36,7 +33,10 @@ const ProductDetails = () => {
   };
 
   return (
-    <div  data-aos="flip-left" className="card lg:card-side bg-base-100 shadow-2xl my-10 max-w-screen-xl mx-auto px-3">
+    <div
+      data-aos="flip-left"
+      className="card lg:card-side bg-base-100 shadow-2xl my-10 max-w-screen-xl mx-auto px-3"
+    >
       <Helmet>
         <title>{name}</title>
       </Helmet>

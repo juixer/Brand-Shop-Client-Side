@@ -21,14 +21,11 @@ const UpdateProduct = () => {
     const updateInfo = { name, photo, brand, type, price, details, rating };
     console.log(updateInfo);
 
-    fetch(
-      `https://server-side-bahjtmsmh-juixers-projects.vercel.app/product/${_id}`,
-      {
-        method: "PUT",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(updateInfo),
-      }
-    )
+    fetch(`https://server-side-jet.vercel.app/product/${_id}`, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(updateInfo),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {

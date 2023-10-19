@@ -22,10 +22,7 @@ const Router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () =>
-          fetch(
-            "https://server-side-bahjtmsmh-juixers-projects.vercel.app/brands"
-          ),
+        loader: () => fetch("https://server-side-jet.vercel.app/brands"),
       },
       {
         path: "/addProduct",
@@ -43,9 +40,7 @@ const Router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://server-side-bahjtmsmh-juixers-projects.vercel.app/products/${params.id}`
-          ),
+          fetch(`https://server-side-jet.vercel.app/products/${params.id}`),
       },
       {
         path: "product/:id",
@@ -55,9 +50,7 @@ const Router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://server-side-bahjtmsmh-juixers-projects.vercel.app/product/${params.id}`
-          ),
+          fetch(`https://server-side-jet.vercel.app/product/${params.id}`),
       },
       {
         path: "updateProduct/:id",
@@ -67,9 +60,7 @@ const Router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://server-side-bahjtmsmh-juixers-projects.vercel.app/product/${params.id}`
-          ),
+          fetch(`https://server-side-jet.vercel.app/product/${params.id}`),
       },
       {
         path: "/login",
@@ -82,10 +73,7 @@ const Router = createBrowserRouter([
       {
         path: "/subscriber",
         element: <Subscribers />,
-        loader: () =>
-          fetch(
-            "https://server-side-bahjtmsmh-juixers-projects.vercel.app/subscribers"
-          ),
+        loader: () => fetch("https://server-side-jet.vercel.app/subscribers"),
       },
       {
         path: "/about",
