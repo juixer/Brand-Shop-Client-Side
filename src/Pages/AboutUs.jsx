@@ -21,11 +21,11 @@ const AboutUs = () => {
               <img
                 className="w-44"
                 src="https://i.ibb.co/cczNjfw/Allura-Avatar-1.png"
-                alt="Alex Smith"
+                alt="Maharob Sazin"
               />
             </figure>
             <div className="card-body text-center">
-              <h2 className="text-xl font-semibold">Alex Smith</h2>
+              <h2 className="text-xl font-semibold">Maharob Sazin</h2>
               <p>CEO</p>
             </div>
           </div>
@@ -34,11 +34,11 @@ const AboutUs = () => {
               <img
                 className="w-44"
                 src="https://i.ibb.co/fHDLc0B/Allura-Sitting.png"
-                alt="May Brown"
+                alt="Tonmoy Khandakar"
               />
             </figure>
             <div className="card-body text-center">
-              <h2 className="text-xl font-semibold">May Brown</h2>
+              <h2 className="text-xl font-semibold">Tonmoy Khandakar</h2>
               <p>Sales Manager</p>
             </div>
           </div>
@@ -60,11 +60,11 @@ const AboutUs = () => {
               <img
                 className="w-44"
                 src="https://i.ibb.co/JRjVFzV/Dayflow-Sitting.png"
-                alt="Roxie Swanson"
+                alt="Mr Juixer"
               />
             </figure>
             <div className="card-body text-center">
-              <h2 className="text-xl font-semibold">Roxie Swanson</h2>
+              <h2 className="text-xl font-semibold">Ms. Juixer</h2>
               <p>Web Designer</p>
             </div>
           </div>
