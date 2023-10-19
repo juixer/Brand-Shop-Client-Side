@@ -16,15 +16,10 @@ const Home = () => {
   const handleShowMore = () => {
     setShowMore(!showMore);
   };
-
   useEffect(() => {
-
-    const fetchTopProducts = async () => {
-      const res = await fetch("https://server-side-jet.vercel.app/topRating")
-      const data = await res.json();
-      setTopRated(data)
-    }
-    fetchTopProducts();
+    fetch("https://server-side-jet.vercel.app/topRating")
+      .then((res) => res.json())
+      .then((data) => setTopRated(data));
   }, []);
   return (
     <div>

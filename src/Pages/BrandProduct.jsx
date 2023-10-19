@@ -9,12 +9,9 @@ const BrandProduct = () => {
   const [brandAd, setBrandAd] = useState([]);
   const { id } = useParams();
   useEffect(() => {
-    const fetchBrandProduct = async () => {
-      const res = await fetch(`https://server-side-jet.vercel.app/brands/${id}`)
-      const data = await res.json();
-      setBrandAd(data)
-    }
-    fetchBrandProduct()
+    fetch(`https://server-side-jet.vercel.app/brands/${id}`)
+      .then((res) => res.json())
+      .then((data) => setBrandAd(data));
   }, [id]);
 
   return (

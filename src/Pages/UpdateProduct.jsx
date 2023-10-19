@@ -1,11 +1,13 @@
 import { Helmet } from "react-helmet-async";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
   const loadedProductDetails = useLoaderData();
   const { _id, name, brand, photo, details, type, price, rating } =
     loadedProductDetails;
+
+    const navigate = useNavigate();
 
   const handleFormData = (e) => {
     e.preventDefault();
@@ -35,6 +37,7 @@ const UpdateProduct = () => {
             timer: 1500,
           });
         }
+        navigate(-1);
       });
   };
   return (
