@@ -14,8 +14,17 @@ const ProductDetails = () => {
   const {user} = useAuth()
 
     // handle cart
-    const handleAddCart = email => {
-       
+    const handleAddCart = () => {
+      const productId = {_id}
+       fetch(`http://localhost:5000/user/${user.email}`,{
+        method: "PATCH",
+        headers:{'content-type': 'application/json'},
+        body: JSON.stringify(productId),
+       })
+       .then(res => res.json())
+       .then(data => {
+        console.log(data);
+       })
     }
 
   return (
@@ -56,7 +65,7 @@ const ProductDetails = () => {
         <p className="text-xl font-semibold">Price: <span className="font-normal">{price}BDT</span></p>
         <p className="max-w-3xl text-xl font-semibold">Description: <span className="font-normal">{details}</span></p>
         <div className="card-actions justify-start mt-5">
-          <button onClick={()=>handleAddCart(user)} className="btn btn-sm bg-black text-white hover:bg-white hover:text-black">
+          <button onClick={handleAddCart} className="btn btn-sm bg-black text-white hover:bg-white hover:text-black">
             Add To Cart
           </button>
         </div>
