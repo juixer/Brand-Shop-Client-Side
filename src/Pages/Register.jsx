@@ -94,7 +94,7 @@ const Register = () => {
       });
   };
   return (
-    <div>
+    <div data-aos="flip-left">
       <Helmet>
         <title>Register</title>
       </Helmet>

@@ -19,7 +19,7 @@ const Cart = () => {
   }, [user]);
 
   return (
-    <div className="mb-28">
+    <div data-aos="flip-left" className="mb-28">
       <h1 className="text-center text-5xl font-semibold  my-10">My Cart</h1>
       <div className="max-w-screen-2xl mx-auto my-10 md:my-16">
         {data.cart !== undefined && carts.length > 0 ? (

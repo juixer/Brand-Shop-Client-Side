@@ -24,7 +24,15 @@ const BrandProduct = () => {
       {loadedBrandProduct.length > 0 ? (
         <div>
           {brandAd.map((ad) => {
-            return <BrandAds key={ad._id} ad={ad} />;
+            return (
+              <>
+                <h1 className="text-center text-5xl font-semibold my-5">
+                  All Products of <span className="font-bold">{ad.name}</span>
+                </h1>
+
+                <BrandAds key={ad._id} ad={ad} />
+              </>
+            );
           })}
         </div>
       ) : (

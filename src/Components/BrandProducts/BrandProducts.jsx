@@ -15,7 +15,7 @@ const BrandProducts = ({ product }) => {
     ).then((res) => res.json());
   };
   return (
-    <div className="card lg:card-side bg-base-100  shadow-2xl">
+    <div data-aos="flip-left" className="card lg:card-side bg-base-100  shadow-2xl">
       <figure>
         <img className="lg:w-56" src={photo} alt={name} />
       </figure>

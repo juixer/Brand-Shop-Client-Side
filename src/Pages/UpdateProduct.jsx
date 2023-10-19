@@ -41,7 +41,7 @@ const UpdateProduct = () => {
       });
   };
   return (
-    <div className="my-10 mx-3">
+    <div data-aos="flip-left" className="my-10 mx-3">
       <Helmet>
         <title>Update Product</title>
       </Helmet>

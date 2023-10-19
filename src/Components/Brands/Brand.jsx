@@ -13,7 +13,7 @@ const Brand = ({ brand }) => {
   };
 
   return (
-    <>
+    <div data-aos="flip-left">
       <Link to={`/products/${name}`}>
         <div
           onClick={() => handleBrand(name)}
@@ -24,7 +24,7 @@ const Brand = ({ brand }) => {
           </figure>
         </div>
       </Link>
-    </>
+    </div>
   );
 };
 

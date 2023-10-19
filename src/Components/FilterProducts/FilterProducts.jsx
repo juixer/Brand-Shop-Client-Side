@@ -16,7 +16,7 @@ const FilterProducts = ({ top }) => {
     ).then((res) => res.json());
   };
   return (
-    <div>
+    <div data-aos="flip-left">
       <div className="card lg:card-side bg-base-100  shadow-2xl">
         <figure>
           <img className="lg:w-56" src={photo} alt={name} />

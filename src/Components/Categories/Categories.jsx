@@ -37,7 +37,7 @@ const Categories = () => {
       .then((data) => setProducts(data));
   }, [category]);
   return (
-    <div className="max-w-screen-2xl mx-auto my-10 px-3">
+    <div data-aos="flip-left" className="max-w-screen-2xl mx-auto my-10 px-3">
       <h1 className="text-center text-5xl font-semibold">Find Your Category</h1>
 
       <div className="flex flex-row justify-center items-center my-5">

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-   <div className="bg-base-300">
+   <div data-aos="flip-left" className="bg-base-300">
      <footer className="footer mx p-10 max-w-screen-2xl mx-auto text-base-content">
       <nav>
         <header className="footer-title">Brands</header>

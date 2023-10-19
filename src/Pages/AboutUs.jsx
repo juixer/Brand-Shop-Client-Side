@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 
 const AboutUs = () => {
   return (
-    <div className="max-w-screen-2xl mx-auto px-3 my-10">
+    <div data-aos="flip-left" className="max-w-screen-2xl mx-auto px-3 my-10">
       <Helmet><title>About us</title></Helmet>
       <h1 className="text-center text-5xl font-semibold  my-5">About US</h1>
       <p className="text-xl">

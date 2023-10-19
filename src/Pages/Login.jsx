@@ -83,7 +83,7 @@ const Login = () => {
       });
   };
   return (
-    <div className="max-w-screen-2xl mx-auto my-16">
+    <div data-aos="flip-left" className="max-w-screen-2xl mx-auto my-16">
       <Helmet>
         <title>Log In</title>
       </Helmet>

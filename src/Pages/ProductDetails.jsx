@@ -36,7 +36,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="card lg:card-side bg-base-100 shadow-2xl my-10 max-w-screen-xl mx-auto px-3">
+    <div  data-aos="flip-left" className="card lg:card-side bg-base-100 shadow-2xl my-10 max-w-screen-xl mx-auto px-3">
       <Helmet>
         <title>{name}</title>
       </Helmet>

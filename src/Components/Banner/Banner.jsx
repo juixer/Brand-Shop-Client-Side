@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <div className="">
+    <div data-aos="flip-up" className="">
       <div
         className="hero h-[750px]"
         style={{
