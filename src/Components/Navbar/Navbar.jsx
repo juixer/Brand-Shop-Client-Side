@@ -111,7 +111,7 @@ const Navbar = () => {
             <input
               type="checkbox"
               onChange={handleToggle}
-              checked={theme === "light" ? false : true}
+              checked={theme !== "light" ? true : false}
             />
 
             {/* sun icon */}
