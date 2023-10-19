@@ -9,14 +9,18 @@ const BrandProduct = () => {
   const [brandAd, setBrandAd] = useState([]);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5000/brands/${id}`)
+    fetch(
+      `https://server-side-bahjtmsmh-juixers-projects.vercel.app/brands/${id}`
+    )
       .then((res) => res.json())
       .then((data) => setBrandAd(data));
   }, [id]);
 
   return (
     <div className="max-w-screen-2xl mx-auto px-3 my-10">
-      <Helmet><title>{id}</title></Helmet>
+      <Helmet>
+        <title>{id}</title>
+      </Helmet>
       {loadedBrandProduct.length > 0 ? (
         <div>
           {brandAd.map((ad) => {
@@ -34,7 +38,10 @@ const BrandProduct = () => {
         </div>
       ) : (
         <div className=" flex flex-col justify-center items-center">
-            <img src="https://static.thenounproject.com/png/213498-200.png" alt="N/A"/>
+          <img
+            src="https://static.thenounproject.com/png/213498-200.png"
+            alt="N/A"
+          />
           <h1 className="text-2xl md:text-6xl max-w-2xl text-center mx-auto">
             We are working on bringing products from this brand to our
             collection. Check back soon!

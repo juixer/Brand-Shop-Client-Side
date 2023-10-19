@@ -67,19 +67,22 @@ const Register = () => {
               timer: 5000,
             });
           });
-        fetch("http://localhost:5000/users", {
-          method: "PATCH",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(user),
-        })
+        fetch(
+          "https://server-side-bahjtmsmh-juixers-projects.vercel.app/users",
+          {
+            method: "PATCH",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(user),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
             Swal.fire({
-                icon: "success",
-                title: "Login Successfully",
-                timer: 1500,
-              });
+              icon: "success",
+              title: "Login Successfully",
+              timer: 1500,
+            });
           });
       })
       .catch((err) => {

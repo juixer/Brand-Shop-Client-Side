@@ -13,11 +13,11 @@ const Home = () => {
   const [showMore, setShowMore] = useState(true);
 
   const handleShowMore = () => {
-    setShowMore(!showMore)
-  }
+    setShowMore(!showMore);
+  };
 
   useEffect(() => {
-    fetch("http://localhost:5000/topRating")
+    fetch("https://server-side-bahjtmsmh-juixers-projects.vercel.app/topRating")
       .then((res) => res.json())
       .then((data) => setTopRated(data));
   }, []);
@@ -50,14 +50,17 @@ const Home = () => {
           </>
         )}
         <div className="my-10 flex justify-center items-center">
-          <button onClick={handleShowMore} className="btn btn-sm hover:bg-black hover:text-white">
+          <button
+            onClick={handleShowMore}
+            className="btn btn-sm hover:bg-black hover:text-white"
+          >
             {showMore ? <span>Show More</span> : <span>Show Less</span>}
           </button>
         </div>
       </div>
       <div>
-        <Categories/>
-        <Subscribe/>
+        <Categories />
+        <Subscribe />
       </div>
     </div>
   );

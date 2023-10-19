@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../assets/Logo.png";
 import { useEffect, useState } from "react";
 import useAuth from "../../Hook/useAuth";
 import Swal from "sweetalert2";
@@ -97,7 +96,7 @@ const Navbar = () => {
         </div>
         <Link to={"/"}>
           {" "}
-          <img className="w-28" src={logo} />
+          <img className="w-28" src='https://i.ibb.co/5kKZVWy/logo.png' />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

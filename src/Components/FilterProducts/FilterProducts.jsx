@@ -3,16 +3,18 @@ import Rating from "react-rating";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hook/useAuth";
 
-const FilterProducts = ({top}) => {
-    const { _id, name, photo, brand, type, price, rating } = top;
+const FilterProducts = ({ top }) => {
+  const { _id, name, photo, brand, type, price, rating } = top;
 
-    const {email} = useAuth()
-    const handleDetails = email => {
-      fetch(`http://localhost:5000/user/${email}`, {
-      method: "GET",
-    })
-      .then((res) => res.json())
-    }
+  const { email } = useAuth();
+  const handleDetails = (email) => {
+    fetch(
+      `https://server-side-bahjtmsmh-juixers-projects.vercel.app/user/${email}`,
+      {
+        method: "GET",
+      }
+    ).then((res) => res.json());
+  };
   return (
     <div>
       <div className="card lg:card-side bg-base-100  shadow-2xl">
@@ -54,7 +56,10 @@ const FilterProducts = ({top}) => {
           <div className="card-actions justify-start">
             <Link to={`/product/${_id}`}>
               {" "}
-              <button onClick={() => handleDetails(email)} className="btn btn-sm hover:bg-black hover:text-white">
+              <button
+                onClick={() => handleDetails(email)}
+                className="btn btn-sm hover:bg-black hover:text-white"
+              >
                 Details
               </button>
             </Link>

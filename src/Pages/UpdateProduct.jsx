@@ -4,7 +4,8 @@ import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
   const loadedProductDetails = useLoaderData();
-  const {_id, name, brand, photo, details, type, price,rating } = loadedProductDetails;
+  const { _id, name, brand, photo, details, type, price, rating } =
+    loadedProductDetails;
 
   const handleFormData = (e) => {
     e.preventDefault();
@@ -20,25 +21,30 @@ const UpdateProduct = () => {
     const updateInfo = { name, photo, brand, type, price, details, rating };
     console.log(updateInfo);
 
-    fetch(`http://localhost:5000/product/${_id}`,{
-        method: 'PUT',
-        headers: {'content-type': 'application/json'},
-        body: JSON.stringify(updateInfo)
-    })
-    .then(res => res.json())
-    .then(data => {
-        if(data.modifiedCount > 0) {
-            Swal.fire({
-                icon: "success",
-                title: "Product Updated",
-                timer: 1500,
-              });
+    fetch(
+      `https://server-side-bahjtmsmh-juixers-projects.vercel.app/product/${_id}`,
+      {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(updateInfo),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            icon: "success",
+            title: "Product Updated",
+            timer: 1500,
+          });
         }
-    })
+      });
   };
   return (
     <div className="my-10 mx-3">
-      <Helmet><title>Update Product</title></Helmet>
+      <Helmet>
+        <title>Update Product</title>
+      </Helmet>
       <h1 className="text-center text-5xl font-semibold my-5">
         Update Product
       </h1>

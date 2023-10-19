@@ -17,9 +17,12 @@ const CartItem = ({ item }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/user/${user.email}/cart/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://server-side-bahjtmsmh-juixers-projects.vercel.app/user/${user.email}/cart/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -33,9 +36,12 @@ const CartItem = ({ item }) => {
   };
 
   const handlePurchase = () => {
-    fetch(`http://localhost:5000/user/${user.email}/cart/${_id}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://server-side-bahjtmsmh-juixers-projects.vercel.app/user/${user.email}/cart/${_id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

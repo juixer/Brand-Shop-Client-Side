@@ -8,7 +8,9 @@ const Cart = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${user?.email}`)
+    fetch(
+      `https://server-side-bahjtmsmh-juixers-projects.vercel.app/user/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setData(data);
