@@ -3,11 +3,12 @@ import { FaRegStar, FaStar } from "react-icons/fa6";
 import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
 import useAuth from "../Hook/useAuth";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
   // loader data
   const loadedProductDetails = useLoaderData();
-  const {_id, brand, details, name, photo, price, rating, type } =
+  const { brand, details, name, photo, price, rating, type } =
     loadedProductDetails;
 
   // authProvider
@@ -15,15 +16,19 @@ const ProductDetails = () => {
 
     // handle cart
     const handleAddCart = () => {
-      const productId = {_id}
        fetch(`http://localhost:5000/user/${user.email}`,{
         method: "PATCH",
         headers:{'content-type': 'application/json'},
-        body: JSON.stringify(productId),
+        body: JSON.stringify(loadedProductDetails),
        })
        .then(res => res.json())
        .then(data => {
         console.log(data);
+        Swal.fire({
+          icon: "success",
+          title: "Product added to your cart",
+          timer: 1500,
+        });
        })
     }
 

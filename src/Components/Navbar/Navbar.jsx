@@ -42,9 +42,6 @@ const Navbar = () => {
         ""
       )}
       <li>
-        <NavLink to={"/subscriber"}>Subscribers</NavLink>
-      </li>
-      <li>
         <NavLink to={"/about"}>About us</NavLink>
       </li>
       <li>
@@ -141,7 +138,7 @@ const Navbar = () => {
           <div className="flex gap-2 justify-center items-center">
             <div>
               {" "}
-              <Link className="text-2xl" to={"/cart"}>
+              <Link className="text-2xl" to={`/cart`}>
                 <FaCartShopping />
               </Link>
             </div>

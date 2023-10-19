@@ -68,7 +68,7 @@ const Register = () => {
             });
           });
         fetch("http://localhost:5000/users", {
-          method: "PUT",
+          method: "PATCH",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(user),
         })

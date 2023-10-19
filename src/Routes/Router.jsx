@@ -14,6 +14,7 @@ import PrivateRoute from "./PrivateRoute";
 import Subscribers from "../Pages/Subscribers";
 import AboutUs from "../Pages/AboutUs";
 import Contact from "../Pages/Contact";
+import Cart from "../Pages/Cart";
   const Router = createBrowserRouter([
     {
       path: "/",
@@ -64,6 +65,10 @@ import Contact from "../Pages/Contact";
         {
           path:'/contact',
           element: <Contact/>
+        },
+        {
+          path:'/cart',
+          element: <PrivateRoute><Cart/></PrivateRoute>,
         }
       ]
     },
