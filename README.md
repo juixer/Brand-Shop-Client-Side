@@ -5,7 +5,7 @@ Website Name: Tech Buddy
 
 Link: https://tech-buddy-7d305.web.app/
 
-- P.S : If some datas are not loading from vercel domain(database). Please reload the page. It will show datas.
+- P.S : if items and brand ad slider not showing probably net issues. Please reload the page or wait to load the page.
 
 
 
