@@ -3,6 +3,7 @@ import logo from "../../assets/Logo.png";
 import { useEffect, useState } from "react";
 import useAuth from "../../Hook/useAuth";
 import Swal from "sweetalert2";
+import { FaCartShopping } from "react-icons/fa6";
 
 const Navbar = () => {
   const { user, userSignOut } = useAuth();
@@ -33,9 +34,6 @@ const Navbar = () => {
       </li>
       {user ? (
         <>
-          <li>
-            <NavLink to={"/cart"}>My Cart</NavLink>
-          </li>
           <li>
             <NavLink to={"/addProduct"}>Add Product</NavLink>
           </li>
@@ -111,7 +109,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <div className="md:mr-3 mt-1 btn rounded-full btn-sm">
+        <div className="mt-1 rounded-full ">
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
             <input
@@ -140,7 +138,13 @@ const Navbar = () => {
           </label>
         </div>
         {user ? (
-          <>
+          <div className="flex gap-2 justify-center items-center">
+            <div>
+              {" "}
+              <Link className="text-2xl" to={"/cart"}>
+                <FaCartShopping />
+              </Link>
+            </div>
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
@@ -161,7 +165,7 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-          </>
+          </div>
         ) : (
           <>
             <Link to={"/login"}>

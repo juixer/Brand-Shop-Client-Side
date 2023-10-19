@@ -1,9 +1,17 @@
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hook/useAuth";
 
 const BrandProducts = ({ product }) => {
   const { _id, name, photo, brand, type, price, rating } = product;
+  const {email} = useAuth()
+    const handleDetails = email => {
+      fetch(`http://localhost:5000/user/${email}`, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+    }
   return (
     <div className="card lg:card-side bg-base-100  shadow-2xl">
       <figure>
@@ -38,7 +46,7 @@ const BrandProducts = ({ product }) => {
         <div className="card-actions justify-start">
           <Link to={`/product/${_id}`}>
             {" "}
-            <button className="btn btn-sm hover:bg-black hover:text-white">
+            <button onClick={() => handleDetails(email)}  className="btn btn-sm hover:bg-black hover:text-white">
               Details
             </button>
           </Link>

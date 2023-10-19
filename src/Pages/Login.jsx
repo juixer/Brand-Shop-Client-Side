@@ -51,6 +51,7 @@ const Login = () => {
           name: result.user.displayName,
           email: result.user.email,
           photo: result.user.photoURL,
+          cart: [],
         };
 
         fetch("http://localhost:5000/users", {
