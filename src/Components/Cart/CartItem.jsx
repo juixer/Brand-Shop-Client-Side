@@ -8,19 +8,28 @@ const CartItem = ({ item }) => {
   const { user } = useAuth();
 
   const handleDelete = () => {
-    fetch(`http://localhost:5000/user/${user.email}/cart/${_id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        Swal.fire({
-          icon: "success",
-          title: "Product removed from cart",
-          timer: 1500,
-        });
-        window.location.reload();
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/user/${user.email}/cart/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+        Swal.fire("Deleted!", "Your item has been deleted.", "success");
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      }
+    });
   };
 
   const handlePurchase = () => {
@@ -36,7 +45,7 @@ const CartItem = ({ item }) => {
           timer: 1000,
         });
         setTimeout(() => {
-            window.location.reload();
+          window.location.reload();
         }, 1000);
       });
   };
