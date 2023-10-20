@@ -10,15 +10,19 @@ const Brand = ({ brand }) => {
   };
 
   return (
-    <div data-aos="flip-left">
+    <div data-aos="flip-left ">
       <Link to={`/products/${name}`}>
-        <div
-          onClick={() => handleBrand(name)}
-          className="card  bg-base-100 hover:bg-base-200  shadow-xl h-28"
-        >
+       
+        <div onClick={() => handleBrand(name)} className="card bg-base-100  shadow-xl image-full ">
           <figure>
-            <img src={logo} alt={name} />
+            <img
+              src={logo}
+              alt={name}
+            />
           </figure>
+          <div className="card-body flex justify-center items-center">
+            <h2 className="text-center  text-5xl">{name}</h2>
+          </div>
         </div>
       </Link>
     </div>

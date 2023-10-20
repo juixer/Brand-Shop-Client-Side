@@ -12,7 +12,7 @@ const Brands = ({loadedBrand}) => {
         Our Partner Brands
       </h1>
 
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 mx-3 my-10">
+      <div className="grid grid-cols-1 gap-5 lg:gap-x-16 md:grid-cols-2 lg:grid-cols-3 mx-3 my-10">
         {
             brands.map(brand => {
                 return(
