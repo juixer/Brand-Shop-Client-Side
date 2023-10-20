@@ -5,7 +5,7 @@ Website Name: Tech Buddy
 
 Link: https://tech-buddy-7d305.web.app/
 
-- P.S : if items and brand ad slider not showing probably net issues. Please reload the page or wait to load the page.
+- P.S : if items and brand ad slider not showing probably net issues. Please reload the page or wait to load the page. Dark mode is based on window dark mode. if one click dark mode toggle no change please press twice. thank you
 
 
 
